@@ -1,3 +1,4 @@
+# Real looking data
 http://mashable.com/2014/03/08/great-white-shark/?utm_campaign=Mash-Prod-RSS-Feedburner-All-Partial&utm_cid=Mash-Prod-RSS-Feedburner-All-Partial&utm_medium=feed&utm_source=rss
 http://i.imgur.com/6vcO9wB.png
 http://news.sky.com/story/1222674/malaysia-airlines-plane-loses-contact
@@ -98,3 +99,23 @@ http://www.dzone.com/links/r/jace_now_available_for_xamarinandroid.html
 http://www.notcot.org/post/56944/
 http://slashdot.feedsportal.com/c/35028/f/647410/s/37e12bed/sc/7/l/0Lyro0Bslashdot0Borg0Cstory0C140C0A30C0A60C220A20A30Cmassachusetts0Ecourt0Esays0Eupskirt0Ephotos0Eare0Elegal0Dutm0Isource0Frss10B0Amainlinkanon0Gutm0Imedium0Ffeed/story01.htm
 http://www.neatorama.com/2014/03/07/Peeing-In-The-Pool-Can-Be-Hazardous-To-Your-Health/
+
+# Edge-case testing data
+http://should.match.zzz/url-1
+http://shouldnt.match.zzz/url-1
+
+should.match.zzz/url-2
+shouldnt.match.zzz/url-2
+
+http://foo.should.match.zzz/url-3
+http://foo.shouldnt.match.zzz/url-3
+
+http://shouldnt.match.zzz.zzz/
+1.2.3.4
+2.3.4.5/test.html
+
+https://z.should.match.zzz/url-4
+https://z.shouldnt.match.zzz/url-4
+
+http://should.match.yyy/url-5
+http://shoUld.matCH.yYy/url-6

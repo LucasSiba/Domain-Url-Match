@@ -1,3 +1,4 @@
+# Real looking data
 google.com
 facebook.com
 youtube.com
@@ -98,3 +99,7 @@ vimeo.com
 dailymotion.com
 cnet.com
 espn.go.com
+
+# Edge-case testing data
+should.match.zzz
+shouLd.mAtCh.YYY

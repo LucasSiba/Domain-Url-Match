@@ -29,7 +29,8 @@ for (<$DOMAINS_FD>) {
     my $orig_dom = $_;
     next unless $orig_dom;
     next if ($orig_dom =~ m/^#/);
-    $orig_dom = reverse $orig_dom; 
+    $orig_dom = reverse $orig_dom;
+    $orig_dom = lc $orig_dom;
     push @DOMAINS, $orig_dom;
     print STDERR localtime()." - $counter domains loaded\n" if ++$counter % 500000 == 0 && DEBUG;
 }
@@ -59,6 +60,7 @@ for (<$URLS_FD>) {
         next;
     }
     my $dom = reverse $url_obj->host;
+    $dom = lc $dom;
     push @URLS, {'url' => $url_orig, 'dom' => $dom};
     print STDERR localtime()." - $counter urls loaded\n" if ++$counter % 250000 == 0 && DEBUG;
 }
