@@ -26,12 +26,13 @@ my $counter = 0;
 my @DOMAINS = ();
 for (<$DOMAINS_FD>) {
     chomp;
-    my $orig_dom = $_;
-    next unless $orig_dom;
-    next if ($orig_dom =~ m/^#/);
-    $orig_dom = reverse $orig_dom;
-    $orig_dom = lc $orig_dom;
-    push @DOMAINS, $orig_dom;
+    my $dom = $_;
+    next unless $dom;
+    next if ($dom =~ m/^#/);
+    $dom = reverse $dom;
+    $dom = lc $dom;
+
+    push @DOMAINS, $dom;
     print STDERR localtime()." - $counter domains loaded\n" if ++$counter % 500000 == 0 && DEBUG;
 }
 
@@ -93,3 +94,5 @@ while (1) {
     last if (!defined $url || !defined $dom); 
 }
 
+# *** Domain names are allowed to have '-' in them, and they are a higher sort order then '.' (ascii)
+#     We change '-' to '~' (the lowest sort order) so we see the sub-domains before the domains with '-' in them 
