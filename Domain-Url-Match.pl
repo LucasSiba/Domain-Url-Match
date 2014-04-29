@@ -31,7 +31,7 @@ for (<$DOMAINS_FD>) {
     next if ($dom =~ m/^#/);
     $dom = reverse $dom;
     $dom = lc $dom;
-
+    $dom =~ s/-/~/g; # ***
     push @DOMAINS, $dom;
     print STDERR localtime()." - $counter domains loaded\n" if ++$counter % 500000 == 0 && DEBUG;
 }
@@ -62,6 +62,7 @@ for (<$URLS_FD>) {
     }
     my $dom = reverse $url_obj->host;
     $dom = lc $dom;
+    $dom =~ s/-/~/g; # ***
     push @URLS, {'url' => $url_orig, 'dom' => $dom};
     print STDERR localtime()." - $counter urls loaded\n" if ++$counter % 250000 == 0 && DEBUG;
 }
@@ -94,5 +95,5 @@ while (1) {
     last if (!defined $url || !defined $dom); 
 }
 
-# *** Domain names are allowed to have '-' in them, and they are a higher sort order then '.' (ascii)
-#     We change '-' to '~' (the lowest sort order) so we see the sub-domains before the domains with '-' in them 
+# *** Domain names are allowed to have '-' in them, and '-' are a higher sort order then '.' (see ascii chart)
+#     We change '-' to '~' (the lowest sort order) so we see check sub-domains before similarly named domains with '-' in them 

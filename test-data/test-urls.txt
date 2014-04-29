@@ -119,3 +119,8 @@ https://z.shouldnt.match.zzz/url-4
 
 http://should.match.yyy/url-5
 http://shoUld.matCH.yYy/url-6
+
+# Sorting Bug
+http://bbb.ccc/should-match
+http://aaa-bbb.ccc/shouldnt-match
+http://aaa.bbb.ccc/should-match
